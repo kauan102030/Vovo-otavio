@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCP - Os Criadores de Possibilidades</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        :root{
+          --color-white: #fff;
+          --color-dark1: #272727;
+          --color-dark2: #2d2d2d;
+          --color-dark3: #414141;
+          --color-dark4: #1c1c1c;
+          --color-dark5: #343434;
+          --color-purple: #b040ff;
+        }
+
+        *{
+          margin: 0;
+          padding: 0;
+        }
+
+        body{
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: var(--color-dark1);
+          color: var(--color-white);
+        }
+
+        img{
+          width: 50px;
+          margin-top: 5px;
+          background-color: black;
+          border-radius: 200px;
+          padding: -100px;
+          
+        }
+
+        .header,
+        .nagivation_header{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          
+
+        }
+        .header{
+          background-color: var(--color-dark2);
+          box-shadow: 1px 1px 4px var(--color-dark4);
+          height: 3.5em;
+          justify-content: space-between;
+          padding: 0 10%;
+        }
+
+        .nagivation_header{
+          gap: 3em;
+          z-index: 2;
+        }
+
+        .nagivation_header a{
+          text-decoration: none;
+          color: var(--color-purple);
+          transition: 1s;
+          font-weight: bold;
+
+        }
+        .active{
+          background-color: var(--color-dark3);
+          padding: 10px;
+          border-radius: 10px;
+        }
+        .content{
+          text-align: center;
+          padding-top: 5em;
+          height: 100vw;
+          transition: 1s;
+          width: 75%;
+          align-items: center;
+          margin-left: -60px;
+        }
+
+        #content{
+          
+        }
+        
+        .btn_icon_header{
+            background-color: transparent;
+            border: none;
+            color: var(--color-white);
+            display: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px){
+          .btn_icon_header{
+            display: block;
+          }
+
+          
+          .nagivation_header{
+              position: absolute;
+              flex-direction: column;
+              top: 0;
+              background-color: var(--color-dark5);
+              height: 100%;
+              width: 35vw;
+              padding: 1em;
+              animation-duration: 1s;
+              margin-left: 100vw;
+          }
+          .imagem{
+           margin-left: -5px;
+          }
+          .meutexto{
+            margin-left: 20px;
+            
+          }
+        }
+
+        @keyframes showSidebar {
+          from { margin-left: -100vw;}
+          top {margin-left: -10vw;}
+        }
+
+        .imagem{
+            z-index: 4;
+        }
+
+        #paragrafo_imagem1{
+          width: 100%;
+          text-align: center;
+          margin-top: 25px;
+        }
+
+        #titulo{
+          background-color: var(--color-dark4);
+          margin-top: -55px;
+          font-size: 30px;
+          padding-left: 2px;
+          padding-right: 2px;
+          width: 100%;
+        }
+
+        @media screen and (max-width:768) {
+            .titulo{
+              display: block;
+            }         
+        }
+    </style>
+</head>
+</head>
+<body>
+
+    <div class="header" id="header">
+      <button onclick="toggleSidebar()" class="btn_icon_header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg>
+      </button>
+      <a href="index.html">
+      <div class="logo_header">
+        <img id="div_img" src="imagens/Logo2.png" alt="Logo OCP" style="box-shadow: 1px 1px 1px var(--color-purple);">
+      </div>
+    </a>
+      <div class="nagivation_header" id="nagivation_header">
+        <button onclick="toggleSidebar()" class="btn_icon_header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg>
+        </button>
+        <a href="index.html" class="active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+          <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+          <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+        </svg>
+          Home</a>
+        <a href="sites.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-reception-4" viewBox="0 0 16 16">
+          <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+          Sites</a>
+        <a href="adicional.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96c.026-.163.04-.33.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0"/>
+        </svg>
+          Adicional</a>
+        <a target="_blank" href="https://contate.me/oscriadoresdepossibilidadess"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+          <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+          <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
+        </svg>
+          Fale Conosco</a>
+      </div>
+    </div>
+    <center>
+    <div tabindex="0" onclick="closeSidebar()" id="content" class="content">
+      <h1 id="titulo" class="meutexto">Os Criadores de Possibilidades - KCP</h1>
+      <img src="imagens/Logo.png" alt="" style="width: 400px; height: 400px; margin-top: 30px; box-shadow: 1px 1px 4px var(--color-purple);" class="imagem">
+      <h4 style="margin-top: 20px; font-size: 22px;" class="meutexto">
+         Desenvolvimento de Sites Personalizados para Pequenas Empresas: Sua Presença Online em Boas Mãos!</h4>
+      <p class="paragrafo_imagem1" style="margin-top: 10px;">Você sabia que ter uma presença online robusta é crucial nos dias de hoje para o sucesso de pequenas empresas? 
+        Seja para atrair novos clientes, mostrar seus produtos ou simplesmente fornecer informações essenciais, um site bem desenvolvido é a
+         chave para alcançar esses objetivos. É aí que entramos em cena! Nosso serviço de desenvolvimento de sites para pequenas empresas 
+         não é apenas sobre códigos e designs;é sobre impulsionar o seu negócio para o futuro digital.
+         Nossos especialistas em design e desenvolvimento trabalham lado a lado com você para criar um site que reflita a identidade única do 
+         seu negócio. Nada de modelos genéricos! Seu site será tão distinto quanto sua marca. 
+         Com o aumento do uso de dispositivos móveis, garantimos que seu site seja completamente responsivo. Seus clientes podem acessar suas 
+         informações a qualquer hora, em qualquer lugar, proporcionando uma experiência excepcional. 
+         Entendemos as necessidades exclusivas das pequenas empresas. Integramos recursos como formulários de contato, portifólios,
+          e até mesmo sistemas de reserva, dependendo do seu setor, para garantir que seu site atenda às suas metas comerciais.
+      </p>
+
+         <img class="imagem" src="imagens/Logo1.png" alt="" style="width: 400px; height: 400px; margin-top: 30px; box-shadow: 1px 1px 4px var(--color-purple);" class="imagem">
+         <h4 style="margin-top: 20px; font-size: 22px; margin-bottom: 10px;">Benefícios para Você:</h4>
+         <p class="paragrafo_imagem1" style="margin-bottom:;">Deixe-nos cuidar da parte técnica. Você pode se concentrar no que faz de melhor - administrar seu negócio - 
+          enquanto criamos uma presença online eficaz para você. Com um site profissional e atrativo, você amplia suas oportunidades de negócios. 
+          Potenciais clientes podem encontrar informações sobre seus produtos e serviços a qualquer hora do dia. 
+          Um site bem projetado não apenas atrai, mas também constrói confiança. 
+          Mostre aos seus clientes que você está comprometido com a excelência, online e offline. Não deixe sua pequena empresa ficar para trás 
+          na revolução digital. Junte-se a nós e veja como um site personalizado pode transformar a maneira como você faz negócios. Estamos 
+          aqui para ajudar você a prosperar online. Entre em contato conosco hoje e dê o primeiro passo para uma presença online impressionante!
+
+</p>
+<div style="width: 100%; height: 20px; background-color: #1c1c1c; margin-bottom: -200px;" onclick="butao()" id="footer"></div>
+    </div>
+    </center>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+<script>
+    var header = document.getElementById('header');
+    var nagivationHeader = document.getElementById('nagivation_header');
+    var content = document.getElementById('content');
+    var showSidebar = false;
+
+    function toggleSidebar(){
+      showSidebar = !showSidebar
+      if(showSidebar){
+        nagivationHeader.style.marginLeft = '-10vw';
+        nagivationHeader.style.animationName = 'showSidebar';
+        content.style.filter = 'blur(2px)';
+      }else{
+        nagivationHeader.style.marginLeft = '-100vw';
+        nagivationHeader.style.animationName = '';
+        content.style.filter = '';
+
+      }
+    }
+
+      function closeSidebar(){
+        if(showSidebar){
+          toggleSidebar();
+        }
+      }
+
+      window.addEventListener('resize', function(event){
+          if(window.innerWidth > 768 && showSidebar){
+            toggleSidebar();
+          }
+      })
+
+      function butao(){
+        var butao = document.getElementsByClassName("minha-classe");
+        butao.style.animation = "1s";
+        
+      }
+
+</script>
+</html>
