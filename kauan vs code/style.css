@@ -1,0 +1,33 @@
+
+
+.cont .paragrafo{
+    color: black;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: -1px;
+    margin-top: -8px;
+    text-align: center;
+}
+
+h5{
+    margin-top: -10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.style{
+    color: blue;
+    text-align: center;
+}
+#button{
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+#lista_produtos{
+    color: blue;
+    font-size: 18px;
+    letter-spacing: 2px;
+
+}
+

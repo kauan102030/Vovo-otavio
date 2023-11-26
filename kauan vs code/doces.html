@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vovô Otávio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="carrinho.js"></script>
+
+</head>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar navbar-darck bg-dark">
+    <a class="navbar-brand" href="index.html">Vovô Otávio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+      aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a target="_blank" class="nav-link" href="https://maps.app.goo.gl/BTG2kPUPfoHEzDZv6">Localização <span class="sr-only">(página
+              atual)</span></a>
+        </li>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Alimentos
+        </a>
+        <li class="nav-item">
+          <a class="nav-link" href="Site da empresa/index.html">Sobre nós</a>
+        </li>
+        <li class="nav-item dropdown">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="nav-item" href="pães.html">Pães</a>
+            <br>
+            <a class="nav-item" href="doces.html">Doces</a>
+            <br>
+            <a class="nav-item" href="salgados.html">Salgados</a>
+            <br>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="outros.html">Outros</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a onclick="block()" target="_blank" class="nav-link disabled" href="administração.html">Administração</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+        <button type="button" class="btn btn-outline-primary">Pesquisar</button>
+        <a href="carrinho.html"><i class="fa fa-shopping-cart" style="font-size:32px;color:white" id="button"></i></a>
+      </form>
+    </div>
+  </nav>
+  <center>
+    <div class="card-deck">
+      <a onclick="acao_botao(' bolo de chocolate')" style="cursor: pointer;">
+      <div class="card">
+        <img class="card-img-top" src="imagens/bolo1 (2) (1).jpg" alt="imagem da capa do card">
+      </a>
+        <div class="card-body">
+          <h5 class="card-title">Bolo de Chocolate</h5>
+          <div class="cont">
+            <p class="paragrafo">2,00</p>
+          </div>
+          <button onclick="acao_botao(' bolo de chocolate')" type="button" class="btn btn-outline-primary">Adicionar ao carrinho
+          <i style="font-size:24px" class="fa">&#xf07a;</i></button>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Agora</small>
+        </div>
+      </div>
+      <a onclick="acao_botao(' bolo com morango')" style="cursor: pointer;">
+      <div class="card">
+        <img class="card-img-top" src="imagens/chcolate com morango.jpg" alt="Imagem de capa do card">
+      </a>
+        <div class="card-body">
+          <h5 class="card-title">Bolo com Morango</h5>
+          <div class="cont">
+            <p class="paragrafo">R$20,00</p>
+          </div>
+          <button onclick="acao_botao(' bolo com morango')" type="button" class="btn btn-outline-primary">Adicionar ao carrinho <i
+                style="font-size:24px" class="fa">&#xf07a;</i></button>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Agora</small>
+        </div>
+      </div>
+      <a onclick="acao_botao(' bolo de baunilha')" style="cursor: pointer;">
+      <div class="card">
+        <img class="card-img-top" src="imagens/bolo baunilha (1).jpg" alt="Imagem de capa do card">
+      </a>
+        <div class="card-body">
+          <h5 class="card-title">Bolo de Baunilha</h5>
+          <div class="cont">
+            <p class="paragrafo">R$15,00</p>
+          </div>
+          <button onclick="acao_botao(' bolo de baunilha')" type="button" class="btn btn-outline-primary">Adicionar ao carrinho <i
+                style="font-size:24px" class="fa">&#xf07a;</i></button>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Agora</small>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck">
+      <a onclick="acao_botao(' bolo de bote')" style="cursor: pointer;">
+      <div class="card">
+        <img class="card-img-top" src="imagens/bolo de pote (1).jpg" alt="Imagem de capa do card">
+      </a>
+        <div class="card-body">
+          <h5 class="card-title">Bolo de Pote</h5>
+          <div class="cont">
+            <p class="paragrafo">R$4,00</p>
+          </div>
+          <button onclick="acao_botao(' bolo de pote')" type="button" class="btn btn-outline-primary">Adicionar ao carrinho <i
+                style="font-size:24px" class="fa">&#xf07a;</i></button>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Agora</small>
+        </div>
+      </div>
+      <a onclick="acao_botao(' bolo de rolo')" style="cursor: pointer;">
+      <div class="card">
+        <img class="card-img-top" src="imagens/bolo de rolo.webp" alt="Imagem de capa do card">
+      </a>
+        <div class="card-body">
+          <h5 class="card-title">Bolo de Rolo</h5>
+          <div class="cont">
+            <p class="paragrafo">R$5,00</p>
+          </div>
+          <button onclick="acao_botao(' bolo de rolo')" type="button" class="btn btn-outline-primary">Adicionar ao carrinho <i
+                style="font-size:24px" class="fa">&#xf07a;</i></button>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Agora</small>
+        </div>
+      </div>
+      <a onclick="acao_botao(' brigadeiro')" style="cursor: pointer;">
+      <div class="card">
+        <img class="card-img-top" src="imagens/brigadeiro (1).jpg" alt="Imagem de capa do card">
+      </a>
+        <div class="card-body">
+          <h5 class="card-title">Brigadeiro</h5>
+          <div class="cont">
+            <p class="paragrafo">R$2,00</p>
+          </div>
+          <button onclick="acao_botao(' brigadeiro')" type="button" class="btn btn-outline-primary">Adicionar ao carrinho <i
+                style="font-size:24px" class="fa">&#xf07a;</i></button>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Agora</small>
+        </div>
+      </div>
+    </div>
+  </center>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
